@@ -18,4 +18,7 @@ public class Cliente {
     @Required
     String nombre;
 
+    @Embedded
+    Direccion direccion;
+    
 }
