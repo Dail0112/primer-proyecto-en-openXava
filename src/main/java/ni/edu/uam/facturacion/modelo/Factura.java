@@ -10,6 +10,13 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Collection;
 
+@View(members= // Esta vista no tiene nombre, por tanto será la vista usada por defecto
+        "anyo, numero, fecha;" + // Separados por coma significa en la misma línea
+                "cliente;" + // Punto y coma significa nueva línea
+                "detalles;" +
+                "observaciones"
+)
+
 public class Factura {
 
     @Id
@@ -54,5 +61,4 @@ public class Factura {
     @ManyToOne(fetch=FetchType.LAZY, optional=false)
     @ReferenceView("Simple") // La vista llamada 'Simple' se usará para visualizar esta referencia
     Cliente cliente;
-
 }
